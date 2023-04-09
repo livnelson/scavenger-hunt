@@ -1,0 +1,29 @@
+.game-page {
+  position: fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.game-modal {
+  background-color: #fff;
+  align-content: center;
+  justify-content: center;
+  width: 320px;
+  max-width: 95vw;
+  height: 91vh;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  align-content: center;
+}

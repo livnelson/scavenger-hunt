@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+.App {
+  text-align: center;
+  background-image: url('https://res.cloudinary.com/dovuffpii/image/upload/v1681007906/mdays-great-race/city-map_kdxnzq.jpg');
+  background-position: center bottom;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 90vw;
+  margin-top: 20px;
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  color: #333333;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0b3f70;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h4 {
+  font-family: 'Cookie', cursive;
+  font-size: 40px;
+  color: #ea242b;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #0b3f70;
+  border: none;
+  border-radius: 5px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: #ea242b;
+  font-weight: 700;
+  transform: scale(1.05);
+}
