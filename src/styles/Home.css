@@ -23,5 +23,10 @@
 .user-code {
   font-size: 60px;
   margin-top: 0px;
+  margin-bottom: 0px;
   font-weight: 700 !important;
+}
+
+.home-header {
+  margin-top: 10px;
 }

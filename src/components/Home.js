@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
 import '../styles/Home.css'
 
-function Home() {
-  const [data, setData] = useState([])
-
+function Home({ nickname }) {
+  const [startTime, setStartTime] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('button clicked')
+
+    // const configObj = {
+    //   nickname: code
+    // }
+
     // fetch('https://jollyrogertelephone.com/8MEBAA7K6yxrnYes5DTwgA7m-md23.php', {
-    //   method: 'POST',
+    //   method: 'PATCH',
     //   headers: {
     //     'Content-Type': 'application/json',
     //     'Access-Control-Allow-Origin': '*',
     //   },
-    //   body: JSON.stringify(data)
+    //   body: JSON.stringify()
     // })
     //   .then(res => res.json())
     //   .then(data => console.log(data))
@@ -32,8 +36,8 @@ function Home() {
         <p>Brief description... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue interdum velit euismod in pellentesque.</p>
         <p className='disclaimer'><em>Don't forget...<br />You MUST allow us to track your location while using the app for the game to work! And write down your game code incase you need to rejoin later.</em></p>
         <h2>Your Game Code:</h2>
-        <h2 className='user-code'> CODE </h2>
-        <h4>Ready to begin?</h4>
+        <h2 className='user-code'>{nickname}</h2>
+        <h4 className='home-header'>Ready to begin?</h4>
         <button
           className='button'
           onClick={handleSubmit}
