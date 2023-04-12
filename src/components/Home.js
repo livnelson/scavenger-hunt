@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../styles/Home.css'
 
 function Home({ nickname }) {
   const [startTime, setStartTime] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('button clicked')
-
+    navigate('/game_page')
     // const configObj = {
     //   nickname: code
     // }

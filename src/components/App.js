@@ -18,6 +18,7 @@ function App() {
       if (r.ok) {
         r.json().then((gameData) => {
           console.log(gameData)
+          setNickname(gameData.nickname)
 
         })
       } else {
@@ -26,14 +27,6 @@ function App() {
     })
 
   }, [])
-
-  // function handleSubmit(e) {
-  //   e.preventDefault()
-  //   // setIsLoading(true);
-  //   const formData = new URLSearchParams()
-  //   formData.append("action", "get turn")
-
-  // }
 
   return (
     <div className="app">

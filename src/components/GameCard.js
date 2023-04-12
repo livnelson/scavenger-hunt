@@ -32,25 +32,25 @@ function GameCard() {
     getUserCoordinates()
     
     console.log(answer, lat, long)
-
+    
     // const configObj = {
-    //   answer: answer,
-    //   latitude: lat,
-    //   longitude: long,
-    // }
-
-    // fetch('https://jollyrogertelephone.com/8MEBAA7K6yxrnYes5DTwgA7m-md23.php', {
-    //   method: 'PATCH',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Access-Control-Allow-Origin': '*',
-    //   },
-    //   body: JSON.stringify(configObj)
-    // })
-    //   .then(res => res.json())
-    //   .then(data => console.log(data))
-    //   .catch(error => console.error(error))
-  }
+      //   answer: answer,
+      //   latitude: lat,
+      //   longitude: long,
+      // }
+      
+      // fetch('https://jollyrogertelephone.com/8MEBAA7K6yxrnYes5DTwgA7m-md23.php', {
+        //   method: 'PATCH',
+        //   headers: {
+          //     'Content-Type': 'application/json',
+          //     'Access-Control-Allow-Origin': '*',
+          //   },
+          //   body: JSON.stringify(configObj)
+          // })
+          //   .then(res => res.json())
+          //   .then(data => console.log(data))
+          //   .catch(error => console.error(error))
+        }
 
 
   return (
