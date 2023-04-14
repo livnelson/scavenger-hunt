@@ -15,6 +15,8 @@ function GameOver() {
         width={width}
         height={height}
         recycle={false}
+        numberOfPieces={1000}
+        gravity={0.03}
       />
       <div className='game-over-modal'>
         <h4 className='game-over-header'>Congratulations!</h4>
