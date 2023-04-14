@@ -1,0 +1,38 @@
+.game-over {
+  /* position: fixed; */
+  /* display: flex;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.game-over-modal {
+  background-color: #fff;
+  align-content: center;
+  justify-content: center;
+  width: 320px;
+  height: 800px;
+  max-width: 95vw;
+  max-height: 91vh;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  align-content: center;
+}
+
+.game-over-header {
+  font-size: 50px;
+}

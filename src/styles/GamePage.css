@@ -1,11 +1,15 @@
 .game-page {
   /* position: fixed; */
-  display: flex;
+  /* display: flex;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  margin: auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
 }
 
 .game-modal {
@@ -22,6 +26,7 @@
   padding-right: 10px;
   margin: auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   border: none;
   border-radius: 4px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
@@ -42,4 +47,35 @@
 .game-page-code {
   margin-top: 0;
   color: #0b3f70;
+}
+
+.footer {
+  position: relative;
+  height: 80px;
+  background-color: #013A5C;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.footer-buttons {
+  max-width: 320px;
+  margin: auto;
+}
+
+.footer-button {
+  justify-content: space-evenly;
+  align-content: center;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  color:  #fff;
+  background-color: #013A5C;
+  border: none;
+}
+
+.footer-button:hover{
+  color: #D91F26;
+  cursor: pointer;
 }
