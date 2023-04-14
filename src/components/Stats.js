@@ -5,7 +5,7 @@ import '../styles/Stats.css'
 
 function Stats() {
   const { gameData } = useContext(Context)
-  
+
   return (
     <div className='stats-modal'>
       <div className='stats-card'>
@@ -21,7 +21,6 @@ function Stats() {
             Progress: {gameData.progress}
           </h3>
           <h3 className='stats'>
-            {/* add function that updates our time in real time, so h3ke elapsed time + whatever we need */}
             Time Since Start: {gameData.elapsed_time}
           </h3>
           <h3 className='stats'>

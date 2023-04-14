@@ -1,32 +1,9 @@
-import React, { useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useContext } from 'react'
 import { Context } from '../contexts/Context'
 import '../styles/Home.css'
 
 function Home() {
-  const [errors, setErrors] = useState([])
-  const {gameData, handleSubmit} = useContext(Context)
-  const navigate = useNavigate()
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
-//     console.log('button clicked')
-//     fetch('/8MEBAA7K6yxrnYes5DTwgA7m-md23.php', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/json' },
-//       body: JSON.stringify({ action: 'start_clock' , gamecode: gameData.gamecode }),
-//   }).then((r) => {
-//     if (r.ok) {
-//         r.json().then((data) => {
-//           console.log(data)
-//           navigate('/game')
-//         })
-//     } else {
-//         r.json().then((err) => setErrors(err.errors))
-//     }
-// })
-    
-//   }
+  const { gameData, handleSubmit } = useContext(Context)
 
   return (
     <div>

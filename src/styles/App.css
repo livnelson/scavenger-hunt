@@ -14,9 +14,9 @@
   margin-top: 20px;
 }
 
-p {
-  font-family: 'Oswald', sans-serif;
-  letter-spacing: 1px;
+p, h3 {
+  /* font-family: 'Oswald', sans-serif; */
+  /* letter-spacing: 1px; */
   color: #333333;
 }
 

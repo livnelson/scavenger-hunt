@@ -23,11 +23,12 @@ const ContextProvider = (props) => {
     })
 
     const navigate = useNavigate()
-
-    const storedGameData = localStorage.getItem('gameData')
     const geolocationAPI = navigator.geolocation
 
-    // get player location (latitude and longitude)
+    // local storage for player gamecode
+    const storedGameData = localStorage.getItem('gameData')
+
+    // gets the players current location (latitude and longitude)
     const getUserCoordinates = () => {
         if (!geolocationAPI) {
             setError('Geolocation API is not available in your browser!')
@@ -44,6 +45,7 @@ const ContextProvider = (props) => {
 
     getUserCoordinates()
 
+    // the game is a foot! this is when the player clicked the 'Lets Go' button on the main page and starts their time
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('button clicked')
@@ -61,10 +63,9 @@ const ContextProvider = (props) => {
                 r.json().then((err) => setErrors(err.errors))
             }
         })
-
     }
 
-    // when player scans QR code and initiates game
+    // when player scans QR code and initiates game this sets the gamecode and first riddle (body)
     useEffect(() => {
         if (storedGameData) {
             setGameData(JSON.parse(storedGameData))
@@ -88,7 +89,7 @@ const ContextProvider = (props) => {
         }
     }, [storedGameData])
 
-    // submit player answer and fetch new riddle(body)
+    // submits player answer, locations coordinates and fetches new riddle (body)
     function submitAnswer(e) {
         e.preventDefault()
         console.log(answer, lat, long)

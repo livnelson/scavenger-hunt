@@ -1,11 +1,4 @@
 .game-over {
-  /* position: fixed; */
-  /* display: flex;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,4 +28,26 @@
 
 .game-over-header {
   font-size: 50px;
+}
+
+.prizes {
+  font-size: 15px;
+  line-height: 1.35;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 20px;
+}
+
+.prize {
+  text-align: left !important;
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.game-over-stat {
+  text-align: left !important;
+  font-weight: 700;
+  font-size: 16px;
+  margin-left: 16px;
 }

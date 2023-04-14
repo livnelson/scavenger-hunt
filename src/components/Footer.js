@@ -5,9 +5,9 @@ import { faRankingStar } from '@fortawesome/free-solid-svg-icons'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import '../styles/Home.css'
 
-function Footer( ) {
+function Footer() {
   const navigate = useNavigate()
-  
+
   const stats = <FontAwesomeIcon icon={faRankingStar} />
   // const logout = <FontAwesomeIcon icon={faRightFromBracket} />
   const home = <FontAwesomeIcon icon={faHouse} />
@@ -29,10 +29,10 @@ function Footer( ) {
 
   return (
     <div className='footer'>
-          <button className='footer-button' onClick={handleHome}>{home}</button>
-          <button className='footer-button' onClick={handleStats}>{stats}</button>
-          {/* <button className='footer-button' onClick={handleLogout}>{logout}</button> */}
-      </div>
+      <button className='footer-button' onClick={handleHome}>{home}</button>
+      <button className='footer-button' onClick={handleStats}>{stats}</button>
+      {/* <button className='footer-button' onClick={handleLogout}>{logout}</button> */}
+    </div>
   )
 }
 

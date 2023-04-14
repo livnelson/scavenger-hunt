@@ -1,11 +1,4 @@
 .game-page {
-  /* position: fixed; */
-  /* display: flex;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
