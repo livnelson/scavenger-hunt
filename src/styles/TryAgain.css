@@ -1,4 +1,4 @@
-.stats-modal {
+.try-again-page {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -11,44 +11,41 @@
   margin-top: 20px;
   /* z-index: 9999; */
   border-radius: 5px;
-
-
-
-
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh; */
 }
 
-.stats-card {
-  color: rgb(1, 58, 92);
+.try-again-modal {
   background-color: #fff;
   align-content: center;
   justify-content: center;
-  width: 320px;
+  width: 300px;
+  height: 800px;
   max-width: 95vw;
-  height: 83vh;
+  max-height: 80vh;
+  padding-top: 14px;
+  padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   align-content: center;
 }
 
-.stats-body{
-  position: relative;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 80px;
+.try-again-header {
+  font-size: 34px;
+  margin-top: 10;
 }
 
-.stats {
-  text-align: left;
-  margin-left: 40px;
-  margin-right: 40px;
+.try-again-subheader {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.riddle-hint {
+  height: 100px;
+  margin-top: 20px;
 }

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Context } from '../contexts/Context'
 import GameCard from './GameCard'
-import Footer from './Footer'
+import Footer from '../components/Footer'
 import '../styles/GamePage.css'
 
-function GamePage() {
-  const { gameData } = useContext(Context)
+function GamePage({ gameCode, gameData, gameBody, setGameBody }) {
+  const [updatedGameData, setUpdatedGameData] = useState({})
+
   const navigate = useNavigate()
 
   return (
@@ -14,10 +14,15 @@ function GamePage() {
       <div className='game-modal'>
         <p className='game-page-top-header'>Monrovia Days Scavenger Hunt</p>
         <h2 className='game-page-header'>Welcome Player</h2>
-        {gameData.gamecode ? <p className='game-page-code'>Your Game Code: {gameData.gamecode}</p> : navigate('/')}
-        <GameCard />
+        {gameCode ? <p className='game-page-code'>Your Game Code: {gameCode}</p> : navigate('/')}
+        <GameCard
+          gameCode={gameCode}
+          gameBody={gameBody}
+          setGameBody={setGameBody}
+          setUpdatedGameData={setUpdatedGameData}
+        />
       </div>
-      <Footer />
+      <Footer gameCode={gameCode} gameData={gameData} updatedGameData={updatedGameData} />
     </div>
   )
 }

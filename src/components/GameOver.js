@@ -1,13 +1,16 @@
-import React, { useContext } from 'react'
-import { Context } from '../contexts/Context'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
 import '../styles/GameOver.css'
 import '../styles/Stats.css'
 
-function GameOver() {
-  const { gameData } = useContext(Context)
+function GameOver({ gameCode, gameData }) {
   const { width, height } = useWindowSize()
+
+  const navigate  = useNavigate()
+
+  if (gameData.game_over === 0) return navigate('/game')
 
   return (
     <div className='game-over'>
@@ -20,7 +23,6 @@ function GameOver() {
       />
       <div className='game-over-modal'>
         <h4 className='game-over-header'>Congratulations!</h4>
-        {/* <p>You have finished the scavenger hunt, please head back to the booth...</p> */}
         <p className='prizes'>These local businesses are offering a special discount to those who have completed the Monrovia Days Scavenger Hunt:</p>
         <p className='prize'>Business One - %10 off</p>
         <p className='prize'>Business Two - %15 off</p>
@@ -29,9 +31,9 @@ function GameOver() {
         <p className='prize'>Business Five - Free with purchase</p>
         <br />
         <h4>Player Stats</h4>
-        <p className='game-over-stat'>Game Code: {gameData.gamecode}</p>
+        <p className='game-over-stat'>Game Code: {gameCode}</p>
         <p className='game-over-stat'>Rank: {gameData.player_ranking}</p>
-        <p className='game-over-stat'>Time: {gameData.elapsed_time}</p>
+        <p className='game-over-stat'>Total Time: {gameData.elapsed_time}</p>
       </div>
     </div>
   )

@@ -39,6 +39,7 @@ h4 {
 
 .button {
   background-color: #0b3f70;
+  width: 210px;
   border: none;
   border-radius: 5px;
   padding-top: 14px;
