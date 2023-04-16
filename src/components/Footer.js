@@ -14,18 +14,15 @@ function Footer({ gameCode, gameData, updatedGameData }) {
   // const logout = <FontAwesomeIcon icon={faRightFromBracket} />
 
   function handleHome() {
-    console.log('home clicked')
     if (showStats === true) setShowStats(!showStats)
 
   }
 
   function handleStats() {
-    console.log('stats clicked')
     setShowStats(!showStats)
   }
 
   // function handleLogout() {
-  //   // console.log('logout clicked')
   //   navigate('/logout')
   // }
 

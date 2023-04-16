@@ -32,10 +32,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
 
   getUserCoordinates()
 
-  function handleTryAgain() {
-    setTryAgain(!tryAgain)
-  }
-
   // submits player answer, locations coordinates and fetches new riddle (body)
   function submitAnswer(e) {
     e.preventDefault()
@@ -57,22 +53,22 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       .then(newData => {
         setAnswer('')
         console.log(newData)
-        if (newData.result === 1) {
+        if (newData.result === 1) {  // action if player answer is correct
           console.log('correct')
           console.log(newData)
           setGameBody(newData.body || newData.body.question)
+          setUpdatedGameData(newData)
         }
-        else if (newData.result === 2) {
+        else if (newData.result === 2) {  // action if player answer is wrong
           console.log('try again')
           setAnswer(answer)
           setUpdatedGameData(newData)
           handleTryAgain()
-          // setAnswer('')
         }
-        else if (newData.result === 3) {
+        else if (newData.result === 3) {  // action if player answer is is in the wrong location
           console.log('you do not seem to be in the correct location')
         }
-        else if (newData.game_over === 1) {
+        else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
           console.log('game over')
           navigate('/game_over')
         }
@@ -81,12 +77,17 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       .catch(error => console.error(error))
   }
 
+  // function to handle tryAgain modal
+  function handleTryAgain() {
+    setTryAgain(!tryAgain)
+  }
+
   return (
     <div className='game-card'>
       <h4 className='game-card-subheader'>Riddle:</h4>
-      <p className='game-card-body'>{ gameBody.question ? gameBody.question : gameBody }</p>
-      { gameBody.image ? <img className='game-image' src={gameBody.image} alt='riddle' /> : null }
-      { gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null }
+      <p className='game-card-body'>{gameBody.question ? gameBody.question : gameBody}</p>
+      {gameBody.image ? <img className='game-image' src={gameBody.image} alt='riddle' /> : null}
+      {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
       <h4 className='game-card-subheader'>Your Answer:</h4>
       <form onSubmit={submitAnswer}>
         <input
@@ -94,12 +95,12 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
           value={answer}
           className='game-form'
           placeholder='Enter your answer here'
-          onChange={(e) => { setAnswer(e.target.value)}}
+          onChange={(e) => { setAnswer(e.target.value) }}
         />
         <button className='button'>Submit Answer</button>
       </form>
-      { tryAgain ? <TryAgain answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null }
-      { error }
+      {tryAgain ? <TryAgain answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
+      {error}
     </div>
   )
 }

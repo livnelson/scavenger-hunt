@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import GameCard from './GameCard'
 import Footer from '../components/Footer'
 import '../styles/GamePage.css'
 
-function GamePage({ gameCode, gameData, gameBody, setGameBody }) {
-  const [updatedGameData, setUpdatedGameData] = useState({})
+function GamePage({ gameCode, gameData, gameBody, setGameBody, updatedGameData, setUpdatedGameData }) {
 
   const navigate = useNavigate()
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Home.css'
 
-function Home({ gameCode, setGameData, handleStartGame }) {
+function Home({ gameCode, handleStartGame }) {
 
   return (
     <div>

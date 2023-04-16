@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
 import '../styles/GameOver.css'
@@ -7,10 +6,6 @@ import '../styles/Stats.css'
 
 function GameOver({ gameCode, gameData }) {
   const { width, height } = useWindowSize()
-
-  const navigate  = useNavigate()
-
-  if (gameData.game_over === 0) return navigate('/game')
 
   return (
     <div className='game-over'>
