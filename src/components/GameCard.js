@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import useSound from 'use-sound'
+import rightAnswer from '../sounds/rightAnswer.wav'
+import wrongAnswer from '../sounds/wrongAnswer.wav'
+import gameOver from '../sounds/gameOver.wav'
 import TryAgain from '../components/TryAgain'
 import '../styles/GameCard.css'
 
 function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
+  const API_URL = process.env.REACT_APP_PHP_URL
+  const [playRight] = useSound(rightAnswer)
+  const [playWrong] = useSound(wrongAnswer)
+  const [playGameOver] = useSound(gameOver)
   const [error, setError] = useState('')
   const [answer, setAnswer] = useState('')
   const [lat, setLat] = useState(null)
@@ -38,7 +46,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
     getUserCoordinates()
     console.log(gameCode, answer, lat, long)
 
-    fetch(`/8MEBAA7K6yxrnYes5DTwgA7m-md23.php/${gameCode}`, {
+    fetch(`${API_URL}/${gameCode}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -58,12 +66,14 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
           console.log(newData)
           setGameBody(newData.body || newData.body.question)
           setUpdatedGameData(newData)
+          playRight()
         }
         else if (newData.result === 2) {  // action if player answer is wrong
           console.log('try again')
           setAnswer(answer)
           setUpdatedGameData(newData)
           handleTryAgain()
+          playWrong()
         }
         else if (newData.result === 3) {  // action if player answer is is in the wrong location
           console.log('you do not seem to be in the correct location')
@@ -71,6 +81,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
         else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
           console.log('game over')
           navigate('/game_over')
+          playGameOver()
         }
       })
 

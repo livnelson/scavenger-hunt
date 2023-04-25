@@ -6,6 +6,7 @@ import GameOver from '../components/GameOver'
 import '../styles/App.css'
 
 function App() {
+  const API_URL = process.env.REACT_APP_PHP_URL
   const [errors, setErrors] = useState([])
   const [gameCode, setGameCode] = useState('')
   const [updatedGameData, setUpdatedGameData] = useState({})
@@ -20,6 +21,7 @@ function App() {
     result: '',
     start_time: '',
     total_turns: '',
+    tries: '',
     turn: '',
     turn_time: '',
   })
@@ -39,7 +41,7 @@ function App() {
     if (storedGameCode) {
       setGameCode(JSON.parse(storedGameCode))
     } else {
-      fetch('/8MEBAA7K6yxrnYes5DTwgA7m-md23.php', {
+      fetch(`${API_URL}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'enroll_new_player' }),
@@ -55,13 +57,13 @@ function App() {
         }
       })
     }
-  }, [storedGameCode])
+  }, [API_URL, storedGameCode])
 
   // handles 'Lets Go' button on the main page and starts players time and sets first question
   const handleStartGame = (e) => {
     e.preventDefault()
     console.log('game started')
-    fetch(`/8MEBAA7K6yxrnYes5DTwgA7m-md23.php/${gameCode}`, {
+    fetch(`${API_URL}/${gameCode}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'start_clock', gamecode: gameCode }),
