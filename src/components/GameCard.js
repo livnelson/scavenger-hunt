@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useSound from 'use-sound'
-import rightAnswer from '../sounds/rightAnswer.wav'
-import wrongAnswer from '../sounds/wrongAnswer.wav'
-import gameOver from '../sounds/gameOver.wav'
+import correctAnswer from '../sounds/correctAnswer.mp3'
+import wrongAnswer from '../sounds/wrongAnswer.mp3'
+import gameOver from '../sounds/gameOver.mp3'
 import TryAgain from '../components/TryAgain'
 import '../styles/GameCard.css'
 
 function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   const API_URL = process.env.REACT_APP_PHP_URL
-  const [playRight] = useSound(rightAnswer)
+  const [playRight] = useSound(correctAnswer)
   const [playWrong] = useSound(wrongAnswer)
   const [playGameOver] = useSound(gameOver)
   const [error, setError] = useState('')
