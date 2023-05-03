@@ -61,24 +61,28 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       .then(newData => {
         setAnswer('')
         console.log(newData)
-        if (newData.result === 1) {  // action if player answer is correct
+        // action if player answer is correct
+        if (newData.result === 1) {
           console.log('correct')
           console.log(newData)
           setGameBody(newData.body || newData.body.question)
           setUpdatedGameData(newData)
           playRight()
         }
-        else if (newData.result === 2) {  // action if player answer is wrong
+        // action if player answer is wrong
+        else if (newData.result === 2) {
           console.log('try again')
           setAnswer(answer)
           setUpdatedGameData(newData)
           handleTryAgain()
           playWrong()
         }
-        else if (newData.result === 3) {  // action if player answer is is in the wrong location
+        // action if player answer is is in the wrong location
+        else if (newData.result === 3) {
           console.log('you do not seem to be in the correct location')
         }
-        else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
+        // action if player has answered all questions correctly and game is over
+        else if (newData.game_over === 1) {
           console.log('game over')
           navigate('/game_over')
           playGameOver()
