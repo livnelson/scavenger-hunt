@@ -19,11 +19,12 @@ function GameOver({ gameCode, gameData }) {
       <div className='game-over-modal'>
         <h4 className='game-over-header'>Congratulations!</h4>
         <p className='prizes'>These local businesses are offering a special discount to those who have completed the Monrovia Days Scavenger Hunt:</p>
-        <p className='prize'>Business One - %10 off</p>
-        <p className='prize'>Business Two - %15 off</p>
-        <p className='prize'>Business Three - Buy 1 Get 1</p>
-        <p className='prize'>Business Four - %10 off</p>
-        <p className='prize'>Business Five - Free with purchase</p>
+        <p className='prize'>Acai Bar - Nature Bowl & any Smoothie $15</p>
+        <p className='prize'>Cafe on Lemon - %10 off</p>
+        <p className='prize'>Knight Cap - Free Chips y Salsa with Entree purchase</p>
+        <p className='prize'>LaAdelita - Free Soda with purchase of full meal</p>
+        <p className='prize'>Tacos & Papas - 20% off</p>
+        <p className='prize'>Mamma's Juicery - Buy 1 Get 1 Free </p>
         <br />
         <h4>Player Stats</h4>
         <p className='game-over-stat'>Game Code: {gameCode}</p>
