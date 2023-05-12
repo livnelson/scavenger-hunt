@@ -59,7 +59,7 @@ function App() {
     }
   }, [API_URL, storedGameCode])
 
-  // handles 'Lets Go' button on the main page and starts players time and sets first question
+  // handles 'Lets Go' button on the main page and starts players time and sets first question (game body)
   const handleStartGame = (e) => {
     e.preventDefault()
     console.log('game started')
