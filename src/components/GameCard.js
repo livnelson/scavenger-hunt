@@ -77,7 +77,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
           playGameOver()
         }
       })
-
       .catch(error => console.error(error))
   }
 
