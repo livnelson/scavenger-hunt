@@ -11,7 +11,7 @@ function Home({ gameCode, handleStartGame }) {
         className='logo'
       />
       <div className='home'>
-        <p>Brief description... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue interdum velit euismod in pellentesque.</p>
+        <p>Joins us for Monrovia Days' first Scavenger Hunt!</p>
         <p className='disclaimer'><em>Don't forget...<br />You MUST enable location services while using the app for the game to work! And write down your game code incase you need to rejoin later.</em></p>
         <h2>Your Game Code:</h2>
         <h2 className='user-code'>{gameCode}</h2>

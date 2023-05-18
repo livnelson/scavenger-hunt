@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import RiddleHint from '../components/RiddleHint'
 import '../styles/TryAgain.css'
 
-function TryAgain({ answer, setAnswer, tryAgain, setTryAgain }) {
+function TryAgain({ gameBody, answer, setAnswer, tryAgain, setTryAgain }) {
+  // const API_URL = process.env.REACT_APP_PHP_URL
+  // const [errors, setErrors] = useState([])
   const [riddleHint, setRiddleHint] = useState(false)
 
   function handleRiddleHint() {
@@ -23,7 +25,7 @@ function TryAgain({ answer, setAnswer, tryAgain, setTryAgain }) {
         <h3 className='try-again-subheader'>Feeling Stuck?</h3>
         <button className='button' onClick={handleRiddleHint}>Reveal Hint</button>
         <div className='riddle-hint'>
-        { riddleHint ? <RiddleHint /> : null }
+        { riddleHint ? <RiddleHint gameBody={gameBody} /> : null }
         </div>
         <h3 className='try-again-subheader'>Ready to Try Again?</h3>
         <button className='button' onClick={handleBackToRiddle}>Back to Riddle</button>

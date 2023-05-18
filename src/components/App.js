@@ -15,6 +15,7 @@ function App() {
     return storedGameBody ? JSON.parse(storedGameBody) : null
   })
   const [gameData, setGameData] = useState({
+    answerType: '',
     elapsed_time: '',
     player_ranking: '',
     progress: '',

@@ -18,7 +18,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   const [long, setLong] = useState(null)
   const [tryAgain, setTryAgain] = useState(false)
 
-
   const geolocationAPI = navigator.geolocation
 
   const navigate = useNavigate()
@@ -40,11 +39,10 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
 
   getUserCoordinates()
 
-  // submits player answer, locations coordinates and fetches new riddle (body)
+  // submits player answer for answer_type='text' and fetches new riddle (body)
   function submitAnswer(e) {
     e.preventDefault()
-    getUserCoordinates()
-    console.log(gameCode, answer, lat, long)
+    console.log(gameCode, answer)
 
     fetch(`${API_URL}/${gameCode}`, {
       method: 'PATCH',
@@ -53,8 +51,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
         action: 'submit_answer',
         gamecode: gameCode,
         answer: answer,
-        latitude: lat,
-        longitude: long
       })
     })
       .then(res => res.json())
@@ -75,9 +71,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
           handleTryAgain()
           playWrong()
         }
-        else if (newData.result === 3) {  // action if player answer is is in the wrong location
-          console.log('you do not seem to be in the correct location')
-        }
         else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
           console.log('game over')
           navigate('/game_over')
@@ -88,32 +81,84 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       .catch(error => console.error(error))
   }
 
+  // submits player location for answer_type='location' and fetches new riddle (body)
+  function submitLocation(e) {
+    e.preventDefault()
+    getUserCoordinates()
+    console.log(gameCode, lat, long)
+
+    fetch(`${API_URL}/${gameCode}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'submit_answer',
+        gamecode: gameCode,
+        latitude: lat,
+        longitude: long
+      })
+    })
+      .then(res => res.json())
+      .then(newData => {
+        setAnswer('')
+        console.log(newData)
+        setGameBody(newData.body || newData.body.question)
+        setUpdatedGameData(newData)
+        playRight()
+        if (newData.result === 3) {  // action if player answer is is in the wrong location
+          console.log('you do not seem to be in the correct location')
+          playWrong()
+        }
+        else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
+          console.log('game over')
+          navigate('/game_over')
+          playGameOver()
+        }
+      })
+      .catch(error => console.error(error))
+  }
+
   // function to handle tryAgain modal
   function handleTryAgain() {
     setTryAgain(!tryAgain)
   }
 
-  return (
-    <div className='game-card'>
-      <h4 className='game-card-subheader'>Riddle:</h4>
-      <p className='game-card-body'>{gameBody.question ? gameBody.question : gameBody}</p>
-      {gameBody.image ? <img className='game-image' src={gameBody.image} alt='riddle' /> : null}
-      {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
-      <h4 className='game-card-subheader'>Your Answer:</h4>
-      <form onSubmit={submitAnswer}>
-        <input
-          type='text'
-          value={answer}
-          className='game-form'
-          placeholder='Enter your answer here'
-          onChange={(e) => { setAnswer(e.target.value) }}
-        />
-        <button className='button'>Submit Answer</button>
-      </form>
-      {tryAgain ? <TryAgain answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
-      {error}
-    </div>
-  )
+  // handles game question format, if question is text, it loats question and response form, otherwise it loads location button
+  if (gameBody.answer_type === 'Text') {
+    return (
+      <div className='game-card'>
+        <h4 className='game-card-subheader'>Riddle:</h4>
+        <p className='game-card-body'>{gameBody.question ? gameBody.question : gameBody}</p>
+        {gameBody.image ? <img className='game-image' src={gameBody.image} alt='riddle' /> : null}
+        {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
+        <h4 className='game-card-subheader'>Your Answer:</h4>
+        <form onSubmit={submitAnswer}>
+          <input
+            type='text'
+            value={answer}
+            className='game-form'
+            placeholder='Enter your answer here'
+            onChange={(e) => { setAnswer(e.target.value) }}
+          />
+          <button className='button'>Submit Answer</button>
+        </form>
+        {tryAgain ? <TryAgain gameBody={gameBody} answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
+        {error}
+      </div>
+    )
+  } else if (gameBody.answer_type === 'Location') {
+    return (
+      <div className='game-card'>
+        <h4 className='game-card-subheader'>Riddle:</h4>
+        <p className='game-card-body'>{gameBody.question ? gameBody.question : gameBody}</p>
+        {gameBody.image ? <img className='game-image' src={gameBody.image} alt='riddle' /> : null}
+        {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
+        <p className='location-question-subheader'><em>When you think you are in the right spot click the button below</em></p>
+        <button className='button' onClick={submitLocation}>I'm Here</button>
+        {tryAgain ? <TryAgain gameBody={gameBody} answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
+        {error}
+      </div>
+    )
+  }
 }
 
 export default GameCard

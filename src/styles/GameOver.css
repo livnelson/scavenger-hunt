@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  background-attachment: fixed;
 }
 
 .game-over-modal {
@@ -13,6 +14,7 @@
   height: 800px;
   max-width: 95vw;
   max-height: 91vh;
+  overflow-y: auto;
   padding-top: 14px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -30,24 +32,54 @@
   font-size: 50px;
 }
 
-.prizes {
-  font-size: 15px;
-  line-height: 1.35;
-  margin-left: 6px;
-  margin-right: 6px;
-  margin-bottom: 20px;
-}
-
-.prize {
-  text-align: left !important;
-  font-weight: 700;
-  font-size: 16px;
-  margin-left: 16px;
-}
-
 .game-over-stat {
   text-align: left !important;
   font-weight: 700;
   font-size: 16px;
   margin-left: 16px;
+}
+
+.prizes {
+  font-size: 15px;
+  line-height: 1.35;
+  margin-left: 6px;
+  margin-right: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
+.prize {
+  text-align: left !important;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 10px;
+  padding-top: 30px;
+  align-self: center;
+  justify-self: center;
+}
+
+.sponsors {
+  display: flex;
+  flex-direction: column;
+  /* max-height: 80px; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.sponsor {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  /* align-items: center;
+  vertical-align: middle; */
+  /* height: 80px; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  
+}
+
+.sponsor-logo {
+  width: 80px;
+  height: auto;
+  margin-top: 30px;
 }

@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  background-attachment: fixed;
 }
 
 .game-modal {
@@ -13,6 +14,7 @@
   height: 800px;
   max-width: 95vw;
   max-height: 91vh;
+  overflow-y: auto;
   padding-top: 14px;
   padding-bottom: 10px;
   padding-left: 10px;

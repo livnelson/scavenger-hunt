@@ -11,6 +11,14 @@
   margin-bottom: 0px;
 }
 
+.location-question-subheader {
+  font-size: 11px;
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: #ea242b;
+}
+
 .game-card-body {
   text-align: left;
 }
