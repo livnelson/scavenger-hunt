@@ -89,6 +89,10 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
     // getUserCoordinates()
     console.log(gameCode, lat, long)
 
+    if (locationHint === true) {
+      setLocationHint(!locationHint)
+    }
+
     fetch(`${API_URL}/${gameCode}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
@@ -125,7 +129,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   }
 
   // handle show hint
-  function handleHint() {
+  function handleLocationHint() {
     setLocationHint(!locationHint)
   }
 
@@ -161,7 +165,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
         {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
         <p className='location-question-subheader'><em>When you think you are in the right spot click the button below</em></p>
         <button className='button' onClick={submitLocation}>I'm Here</button>
-        <p className='need-hint' onClick={handleHint}>Need a hint? <em>Click Here</em></p>
+        <p className='need-hint' onClick={handleLocationHint}>Need a hint? <em>Click Here</em></p>
         { locationHint ? <LocationHint gameBody={gameBody} /> : null }
         {tryAgain ? <TryAgain gameBody={gameBody} answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
         {error}
