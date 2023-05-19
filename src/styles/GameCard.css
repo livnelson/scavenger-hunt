@@ -23,6 +23,10 @@
   text-align: left;
 }
 
+.try-again-card-body {
+  text-align: center;
+}
+
 .riddle-text {
   text-align: left;
   font-size: 18px;

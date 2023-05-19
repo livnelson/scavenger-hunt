@@ -20,6 +20,9 @@ function TryAgain({ gameBody, answer, setAnswer, tryAgain, setTryAgain }) {
     <div className='try-again-page'>
       <div className='try-again-modal'>
         <h4 className='try-again-header'>Try Again</h4>
+        <p className='try-again-card-body'>{gameBody.question ? gameBody.question : gameBody}</p>
+        {gameBody.image ? <img className='game-image' src={gameBody.image} alt='riddle' /> : null}
+        {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
         <h3 className='try-again-subheader'>You Entered:</h3>
         <p>"{answer}"</p>
         <h3 className='try-again-subheader'>Feeling Stuck?</h3>
