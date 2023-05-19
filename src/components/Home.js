@@ -12,7 +12,7 @@ function Home({ gameCode, handleStartGame }) {
       />
       <div className='home'>
         <p>Step into an immersive experience, uncover city wonders, crack challenging clues, and unearth hidden treasures! Join the fun and embark on thrilling adventures with the Monrovia Days Scavenger Hunt. Celebrate Monrovia Days in a whole new way and unlock exciting rewards!</p>
-        <p className='disclaimer'><em>Don't forget to enable location services so the game will work!</em></p>
+        {/* <p className='disclaimer'><em>Don't forget to enable location services so the game will work!</em></p> */}
         <h2>Your Game Code:</h2>
         <h2 className='user-code'>{gameCode}</h2>
         <h4 className='home-header'>Ready to begin?</h4>
