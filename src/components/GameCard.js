@@ -5,6 +5,7 @@ import correctAnswer from '../sounds/correctAnswer.mp3'
 import wrongAnswer from '../sounds/wrongAnswer.mp3'
 import gameOver from '../sounds/gameOver.mp3'
 import TryAgain from '../components/TryAgain'
+import LocationHint from './LocationHint'
 import '../styles/GameCard.css'
 
 function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
@@ -17,27 +18,29 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   const [lat, setLat] = useState(null)
   const [long, setLong] = useState(null)
   const [tryAgain, setTryAgain] = useState(false)
+  const [locationHint, setLocationHint] = useState(false)
 
-  const geolocationAPI = navigator.geolocation
+
+  // const geolocationAPI = navigator.geolocation
 
   const navigate = useNavigate()
 
   // gets the players current location (latitude and longitude)
-  const getUserCoordinates = () => {
-    if (!geolocationAPI) {
-      setError('Geolocation API is not available in your browser!')
-    } else {
-      geolocationAPI.getCurrentPosition((position) => {
-        const { coords } = position
-        setLat(coords.latitude)
-        setLong(coords.longitude)
-      }, (error) => {
-        setError('Something went wrong getting your position!')
-      })
-    }
-  }
+  // const getUserCoordinates = () => {
+  //   if (!geolocationAPI) {
+  //     setError('Geolocation API is not available in your browser!')
+  //   } else {
+  //     geolocationAPI.getCurrentPosition((position) => {
+  //       const { coords } = position
+  //       setLat(coords.latitude)
+  //       setLong(coords.longitude)
+  //     }, (error) => {
+  //       setError('Something went wrong getting your position!')
+  //     })
+  //   }
+  // }
 
-  getUserCoordinates()
+  // getUserCoordinates()
 
   // submits player answer for answer_type='text' and fetches new riddle (body)
   function submitAnswer(e) {
@@ -83,7 +86,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   // submits player location for answer_type='location' and fetches new riddle (body)
   function submitLocation(e) {
     e.preventDefault()
-    getUserCoordinates()
+    // getUserCoordinates()
     console.log(gameCode, lat, long)
 
     fetch(`${API_URL}/${gameCode}`, {
@@ -92,8 +95,8 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       body: JSON.stringify({
         action: 'submit_answer',
         gamecode: gameCode,
-        latitude: lat,
-        longitude: long
+        // latitude: lat,
+        // longitude: long
       })
     })
       .then(res => res.json())
@@ -119,6 +122,11 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   // function to handle tryAgain modal
   function handleTryAgain() {
     setTryAgain(!tryAgain)
+  }
+
+  // handle show hint
+  function handleHint() {
+    setLocationHint(!locationHint)
   }
 
   // handles game question format, if question is text, it loats question and response form, otherwise it loads location button
@@ -153,6 +161,8 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
         {gameBody.question_image ? <img className='game-image' src={gameBody.question_image} alt='question-riddle' /> : null}
         <p className='location-question-subheader'><em>When you think you are in the right spot click the button below</em></p>
         <button className='button' onClick={submitLocation}>I'm Here</button>
+        <p className='need-hint' onClick={handleHint}>Need a hint? <em>Click Here</em></p>
+        { locationHint ? <LocationHint gameBody={gameBody} /> : null }
         {tryAgain ? <TryAgain gameBody={gameBody} answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
         {error}
       </div>
