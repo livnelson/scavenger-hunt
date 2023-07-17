@@ -1,4 +1,3 @@
-<img src='https://liv-creative.com/wp-content/uploads/2023/02/myflix-logo.png' width='200'>
 <em>Monrovia Days Scavenger hunt</em><br>
 Step into an immersive experience, uncover city wonders, crack challenging clues, and unearth hidden treasures! Welcome to the Monrovia Days Scavenger Hunt app, where you can join the fun and embark on thrilling adventures in Monrovia, CA.
 <br></br>
