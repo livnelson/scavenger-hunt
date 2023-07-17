@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+<img src='https://liv-creative.com/wp-content/uploads/2023/02/myflix-logo.png' width='200'>
+<em>Monrovia Days Scavenger hunt</em><br>
+Step into an immersive experience, uncover city wonders, crack challenging clues, and unearth hidden treasures! Welcome to the Monrovia Days Scavenger Hunt app, where you can join the fun and embark on thrilling adventures in Monrovia, CA.
+<br></br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+The Monrovia Days Scavenger Hunt app combines the power of React and PHP to create an exciting and engaging experience. Explore the rich history and hidden gems of Monrovia while solving clever puzzles and discovering fascinating facts.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Immersive Gameplay: Dive into an immersive experience where you'll follow clues, solve puzzles, and explore Monrovia's historical landmarks.
+- Challenging Clues: Crack challenging clues that will test your wits and lead you closer to the hidden treasures.
+- Uncover Hidden Treasures: Discover hidden treasures and uncover fascinating secrets about Monrovia's past.
+- Exciting Rewards: Earn exciting rewards as you progress through the scavenger hunt and unlock special achievements.
+- Smooth User Experience: Enjoy a seamless user experience thanks to the powerful combination of React and PHP technologies.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
+React: Front-end framework <br>
+PHP: Back-end framework <br>
+DigitalOcean: Front-End hosting <br>
+geoLocate <br>
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Future Goals
+Adding functionality
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+Liv Nelson
