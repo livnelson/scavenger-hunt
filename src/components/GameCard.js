@@ -13,10 +13,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   const [playRight] = useSound(correctAnswer)
   const [playWrong] = useSound(wrongAnswer)
   const [playGameOver] = useSound(gameOver)
-  const [error, setError] = useState('')
   const [answer, setAnswer] = useState('')
-  const [lat, setLat] = useState(null)
-  const [long, setLong] = useState(null)
   const [tryAgain, setTryAgain] = useState(false)
   const [locationHint, setLocationHint] = useState(false)
 
@@ -128,7 +125,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
           <button className='button'>Submit Answer</button>
         </form>
         {tryAgain ? <TryAgain gameBody={gameBody} answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
-        {error}
       </div>
     )
   } else if (gameBody.answer_type === 'Location') {
@@ -143,7 +139,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
         <p className='need-hint' onClick={handleLocationHint}>Need a hint? <em>Click Here</em></p>
         { locationHint ? <LocationHint gameBody={gameBody} /> : null }
         {tryAgain ? <TryAgain gameBody={gameBody} answer={answer} tryAgain={tryAgain} setTryAgain={setTryAgain} setAnswer={setAnswer} /> : null}
-        {error}
       </div>
     )
   }

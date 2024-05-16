@@ -71,6 +71,7 @@ function GameOver({ gameCode, gameData }) {
           </button>
         </form>
       </div>
+      {errors}
     </div>
   )
 }
