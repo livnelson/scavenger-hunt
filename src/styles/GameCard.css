@@ -6,7 +6,7 @@
 }
 
 .game-card-subheader {
-  text-align: left !important;
+  text-align: center !important;
   margin-top: 20px;
   margin-bottom: 0px;
 }
@@ -20,7 +20,7 @@
 }
 
 .game-card-body {
-  text-align: left;
+  text-align: center;
 }
 
 .try-again-card-body {

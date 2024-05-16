@@ -16,8 +16,6 @@
 }
 
 p, h3 {
-  /* font-family: 'Oswald', sans-serif; */
-  /* letter-spacing: 1px; */
   color: #333333;
 }
 
@@ -35,6 +33,14 @@ h4 {
   font-size: 30px;
   color: #ea242b;
   margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-family: 'Cookie', cursive;
+  font-size: 24px;
+  color: #ea242b;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 

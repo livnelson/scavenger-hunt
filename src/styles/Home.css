@@ -6,13 +6,14 @@
 }
 
 .home {
-  margin: 20px;
+  margin: auto;
   margin-top: 10px;
   padding-top: 10px;
   padding-bottom: 30px;
   padding-left: 20px;
   padding-right: 20px;
   max-height: 95vh;
+  max-width: 300px;
   overflow-y: auto;
   background-color: white;
   border-radius: 10px;
