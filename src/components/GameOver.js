@@ -13,8 +13,8 @@ function GameOver({ gameCode, gameData }) {
   
   const handleUserInfo = (e) => {
     e.preventDefault()
-    console.log('Name:' + username)
-    console.log('Email:' + email)
+    // console.log('Name:' + username)
+    // console.log('Email:' + email)
     fetch(`${API_URL}/${gameCode}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -22,7 +22,7 @@ function GameOver({ gameCode, gameData }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((data) => {
-          console.log(data)
+          // console.log(data)
         })
       } else {
         r.json().then((err) => setErrors(err.errors))

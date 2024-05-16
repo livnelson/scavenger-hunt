@@ -45,7 +45,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   // submits player answer for answer_type='text' and fetches new riddle (body)
   function submitAnswer(e) {
     e.preventDefault()
-    console.log(gameCode, answer)
+    // console.log(gameCode, answer)
 
     fetch(`${API_URL}/${gameCode}`, {
       method: 'PATCH',
@@ -59,23 +59,23 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       .then(res => res.json())
       .then(newData => {
         setAnswer('')
-        console.log(newData)
+        // console.log(newData)
         if (newData.result === 1) {  // action if player answer is correct
-          console.log('correct')
-          console.log(newData)
+          // console.log('correct')
+          // console.log(newData)
           setGameBody(newData.body || newData.body.question)
           setUpdatedGameData(newData)
           playRight()
         }
         else if (newData.result === 2) {  // action if player answer is wrong
-          console.log('try again')
+          // console.log('try again')
           setAnswer(answer)
           setUpdatedGameData(newData)
           handleTryAgain()
           playWrong()
         }
         else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
-          console.log('game over')
+          // console.log('game over')
           navigate('/game_over')
           playGameOver()
         }
@@ -87,7 +87,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   function submitLocation(e) {
     e.preventDefault()
     // getUserCoordinates()
-    console.log(gameCode, lat, long)
+    // console.log(gameCode, lat, long)
 
     if (locationHint === true) {
       setLocationHint(!locationHint)
@@ -106,12 +106,12 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       .then(res => res.json())
       .then(newData => {
         setAnswer('')
-        console.log(newData)
+        // console.log(newData)
         setGameBody(newData.body || newData.body.question)
         setUpdatedGameData(newData)
         playRight()
         if (newData.result === 3) {  // action if player answer is is in the wrong location
-          console.log('you do not seem to be in the correct location')
+          // console.log('you do not seem to be in the correct location')
           playWrong()
         }
         else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over
