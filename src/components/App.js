@@ -59,7 +59,7 @@ function App() {
         if (r.ok) {
           r.json().then((data) => {
             localStorage.setItem('gameCode', JSON.stringify(data.gamecode))  // store gameCode in localStorage
-            console.log(data)
+            // console.log(data)
             setGameCode(data.gamecode)
           })
         } else {
@@ -77,7 +77,7 @@ function App() {
   // handles 'Lets Go' button on the main page and starts players time and sets first question (game body)
   const handleStartGame = (e) => {
     e.preventDefault()
-    console.log('game started')
+    // console.log('game started')
     fetch(`${API_URL}/${gameCode}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -85,7 +85,7 @@ function App() {
     }).then((r) => {
       if (r.ok) {
         r.json().then((data) => {
-          console.log(data)
+          // console.log(data)
           setGameData(data)
           setGameBody(data.body)
           localStorage.setItem('gameBody', JSON.stringify(data.body))  // store gameBody in localStorage

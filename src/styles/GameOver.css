@@ -12,7 +12,7 @@
   align-content: center;
   justify-content: center;
   width: 320px;
-  height: auto;
+  height: 800px;
   max-width: 95vw;
   max-height: 91vh;
   overflow-y: auto;
@@ -63,12 +63,21 @@
 .sponsors {
   display: flex;
   flex-direction: column;
+  /* max-height: 80px; */
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .sponsor {
   display: flex;
   position: relative;
-  flex-direction: row;  
+  flex-direction: row;
+  /* align-items: center;
+  vertical-align: middle; */
+  /* height: 80px; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  
 }
 
 .sponsor-logo {
@@ -79,8 +88,8 @@
 
 .input {
   width: 85%;
-  margin: 7px;
-  padding: 8px 5px;
+  margin: 8px;
+  padding: 5px;
 }
 
 .submit-btn {
@@ -90,6 +99,8 @@
   border-radius: 5px;
   padding-top: 14px;
   padding-bottom: 14px;
+  /* padding-left: 30px;
+  padding-right: 30px; */
   margin: 8px;
   color: white;
   text-transform: uppercase;

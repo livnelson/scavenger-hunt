@@ -5,7 +5,7 @@ import '../styles/Stats.css'
 function Stats({ gameCode, gameData, showStats, setShowStats, updatedGameData }) {
 
   function handleCloseStats() {
-    console.log('clicked closestats')
+    // console.log('clicked closestats')
     setShowStats(!showStats)
   }
 
