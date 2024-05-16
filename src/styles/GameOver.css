@@ -55,7 +55,6 @@
   font-size: 16px;
   text-align: center;
   margin-bottom: 0px;
-  margin-left: 10px;
   align-self: center;
   justify-self: center;
 }
@@ -114,4 +113,21 @@
   background-color: #ea242b;
   font-weight: 700;
   transform: scale(1.05);
+}
+
+.success-message {
+  font-size: 12px;
+  color:  #ea242b;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.winner-message {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
