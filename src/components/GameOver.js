@@ -5,7 +5,7 @@ import '../styles/GameOver.css'
 import '../styles/Stats.css'
 
 function GameOver({ gameCode, gameData }) {
-  const API_URL = process.env.REACT_APP_PHP_URL
+  const API_URL = '/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
   const [errors, setErrors] = useState([])
   const { width, height } = useWindowSize()
   const [username, setUsername] = useState('')

@@ -6,7 +6,7 @@ import GameOver from '../components/GameOver'
 import '../styles/App.css'
 
 function App() {
-  const API_URL = process.env.REACT_APP_PHP_URL
+  const API_URL = '/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
   const [errors, setErrors] = useState([])
   const [gameCode, setGameCode] = useState('')
   const [updatedGameData, setUpdatedGameData] = useState({})
