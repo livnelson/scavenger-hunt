@@ -1,5 +1,4 @@
 import React from 'react'
-// import Footer from './Footer'
 import '../styles/Stats.css'
 
 function Stats({ gameCode, gameData, showStats, setShowStats, updatedGameData }) {

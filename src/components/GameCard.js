@@ -20,27 +20,7 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   const [tryAgain, setTryAgain] = useState(false)
   const [locationHint, setLocationHint] = useState(false)
 
-
-  // const geolocationAPI = navigator.geolocation
-
   const navigate = useNavigate()
-
-  // gets the players current location (latitude and longitude)
-  // const getUserCoordinates = () => {
-  //   if (!geolocationAPI) {
-  //     setError('Geolocation API is not available in your browser!')
-  //   } else {
-  //     geolocationAPI.getCurrentPosition((position) => {
-  //       const { coords } = position
-  //       setLat(coords.latitude)
-  //       setLong(coords.longitude)
-  //     }, (error) => {
-  //       setError('Something went wrong getting your position!')
-  //     })
-  //   }
-  // }
-
-  // getUserCoordinates()
 
   // submits player answer for answer_type='text' and fetches new riddle (body)
   function submitAnswer(e) {
@@ -86,8 +66,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
   // submits player location for answer_type='location' and fetches new riddle (body)
   function submitLocation(e) {
     e.preventDefault()
-    // getUserCoordinates()
-    // console.log(gameCode, lat, long)
 
     if (locationHint === true) {
       setLocationHint(!locationHint)
@@ -99,8 +77,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
       body: JSON.stringify({
         action: 'submit_answer',
         gamecode: gameCode,
-        // latitude: lat,
-        // longitude: long
       })
     })
       .then(res => res.json())
@@ -111,7 +87,6 @@ function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
         setUpdatedGameData(newData)
         playRight()
         if (newData.result === 3) {  // action if player answer is is in the wrong location
-          // console.log('you do not seem to be in the correct location')
           playWrong()
         }
         else if (newData.game_over === 1) {  // action if player has answered all questions correctly and game is over

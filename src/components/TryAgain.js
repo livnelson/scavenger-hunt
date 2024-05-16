@@ -3,8 +3,6 @@ import RiddleHint from '../components/RiddleHint'
 import '../styles/TryAgain.css'
 
 function TryAgain({ gameBody, answer, setAnswer, tryAgain, setTryAgain }) {
-  // const API_URL = process.env.REACT_APP_PHP_URL
-  // const [errors, setErrors] = useState([])
   const [riddleHint, setRiddleHint] = useState(false)
 
   function handleRiddleHint() {

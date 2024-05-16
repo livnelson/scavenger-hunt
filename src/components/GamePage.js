@@ -1,8 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import GameCard from './GameCard'
-// import ResetGame from './ResetGame'
-import Footer from '../components/Footer'
 import '../styles/GamePage.css'
 
 function GamePage({ gameCode, setGameCode, gameData, gameBody, setGameBody, updatedGameData, setUpdatedGameData }) {
@@ -22,13 +20,6 @@ function GamePage({ gameCode, setGameCode, gameData, gameBody, setGameBody, upda
           setUpdatedGameData={setUpdatedGameData}
         />
       </div>
-      {/* <button onClick>Reset Game</button> */}
-      {/* <Footer
-        gameCode={gameCode}
-        setGameCode={setGameCode}
-        gameData={gameData}
-        updatedGameData={updatedGameData}
-      /> */}
     </div>
   )
 }
