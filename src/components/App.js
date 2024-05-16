@@ -6,7 +6,7 @@ import GameOver from '../components/GameOver'
 import '../styles/App.css'
 
 function App() {
-  const API_URL = '/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
+  const API_URL = 'https://jollyrogertelephone.com/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
   const [errors, setErrors] = useState([])
   const [gameCode, setGameCode] = useState('')
   const [updatedGameData, setUpdatedGameData] = useState({})

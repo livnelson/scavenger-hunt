@@ -9,7 +9,7 @@ import LocationHint from './LocationHint'
 import '../styles/GameCard.css'
 
 function GameCard({ gameCode, gameBody, setGameBody, setUpdatedGameData }) {
-  const API_URL ='/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
+  const API_URL ='https://jollyrogertelephone.com/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
   const [playRight] = useSound(correctAnswer)
   const [playWrong] = useSound(wrongAnswer)
   const [playGameOver] = useSound(gameOver)

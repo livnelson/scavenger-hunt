@@ -5,7 +5,7 @@ import '../styles/GameOver.css'
 import '../styles/Stats.css'
 
 function GameOver({ gameCode, gameData }) {
-  const API_URL = '/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
+  const API_URL = 'https://jollyrogertelephone.com/8MEBAA7K6yxrnYes5DTwgA7m-md23.php'
   const [errors, setErrors] = useState([])
   const { width, height } = useWindowSize()
   const [username, setUsername] = useState('')
