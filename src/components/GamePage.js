@@ -1,10 +1,11 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import GameCard from './GameCard'
-// import Footer from '../components/Footer'
+// import ResetGame from './ResetGame'
+import Footer from '../components/Footer'
 import '../styles/GamePage.css'
 
-function GamePage({ gameCode, gameData, gameBody, setGameBody, updatedGameData, setUpdatedGameData }) {
+function GamePage({ gameCode, setGameCode, gameData, gameBody, setGameBody, updatedGameData, setUpdatedGameData }) {
 
   const navigate = useNavigate()
 
@@ -21,7 +22,13 @@ function GamePage({ gameCode, gameData, gameBody, setGameBody, updatedGameData, 
           setUpdatedGameData={setUpdatedGameData}
         />
       </div>
-      {/* <Footer gameCode={gameCode} gameData={gameData} updatedGameData={updatedGameData} /> */}
+      {/* <button onClick>Reset Game</button> */}
+      {/* <Footer
+        gameCode={gameCode}
+        setGameCode={setGameCode}
+        gameData={gameData}
+        updatedGameData={updatedGameData}
+      /> */}
     </div>
   )
 }

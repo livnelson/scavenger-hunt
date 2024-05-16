@@ -4,6 +4,7 @@
   justify-content: space-between;
   height: 100vh;
   background-attachment: fixed;
+  padding-top: 80px;
 }
 
 .game-over-modal {
@@ -11,12 +12,12 @@
   align-content: center;
   justify-content: center;
   width: 320px;
-  height: 800px;
+  height: auto;
   max-width: 95vw;
   max-height: 91vh;
   overflow-y: auto;
   padding-top: 14px;
-  padding-bottom: 10px;
+  padding-bottom: 50px;
   padding-left: 10px;
   padding-right: 10px;
   margin: auto;
@@ -42,18 +43,19 @@
 .prizes {
   font-size: 15px;
   line-height: 1.35;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-top: 4px;
+  margin-left: 16px;
+  margin-right: 16px;
   align-items: center;
   justify-content: center;
 }
 
 .prize {
-  text-align: left !important;
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0px;
   margin-left: 10px;
-  padding-top: 30px;
   align-self: center;
   justify-self: center;
 }
@@ -61,25 +63,44 @@
 .sponsors {
   display: flex;
   flex-direction: column;
-  /* max-height: 80px; */
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 .sponsor {
   display: flex;
   position: relative;
-  flex-direction: row;
-  /* align-items: center;
-  vertical-align: middle; */
-  /* height: 80px; */
-  /* align-content: center; */
-  /* justify-content: center; */
-  
+  flex-direction: row;  
 }
 
 .sponsor-logo {
   width: 80px;
   height: auto;
   margin-top: 30px;
+}
+
+.input {
+  width: 85%;
+  margin: 7px;
+  padding: 8px 5px;
+}
+
+.submit-btn {
+  background-color: #0b3f70;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin: 8px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #ea242b;
+  font-weight: 700;
+  transform: scale(1.05);
 }

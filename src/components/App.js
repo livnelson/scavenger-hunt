@@ -37,6 +37,15 @@ function App() {
     localStorage.setItem('gameBody', JSON.stringify(gameBody))
   }, [gameBody])
 
+  // handles game reset 
+  const resetGameCode = () => {
+    if (localStorage.getItem('gameCode')) {
+      localStorage.removeItem('gameCode')   // removes the stored game code from localStorage
+    }
+    setGameCode(null)   // resets the game code state to null or any initial value
+    navigate('/')
+  }
+
   // when player scans QR code and initiates game, this function sets the gamecode
   useEffect(() => {
     if (storedGameCode) {
@@ -58,7 +67,12 @@ function App() {
         }
       })
     }
+    // clean up the game code when the component unmounts
+    // return () => {
+    //   resetGameCode()
+    // }
   }, [API_URL, storedGameCode])
+
 
   // handles 'Lets Go' button on the main page and starts players time and sets first question (game body)
   const handleStartGame = (e) => {
@@ -99,6 +113,7 @@ function App() {
           setGameData={setGameData}
           updatedGameData={updatedGameData}
           setUpdatedGameData={setUpdatedGameData}
+          resetGameCode={resetGameCode}
         />} />
         <Route path='/game_over' element={<GameOver
           gameCode={gameCode}
